@@ -68,7 +68,7 @@ const Home = () => {
     if (loading) return <div>Carregando...</div>;
     if (error) return <div>Erro: {error}</div>;
 
-    const headers = ['ID', 'Nome', 'Idade'];
+    const headers = ['Nome', 'Ações'];  // Simplified headers
 
     return (
         <div className="container mx-auto p-4">
@@ -86,6 +86,10 @@ const Home = () => {
                 data={users}
                 onEdit={handleEdit}
                 onDelete={handleDelete}
+                onRowClick={(user) => {
+                    setEditingUser(user);
+                    setIsModalOpen(true);
+                }}
             />
 
             <Modal 
