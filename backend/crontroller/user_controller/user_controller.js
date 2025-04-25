@@ -54,7 +54,6 @@ export const createUser = (req, res) => {
         password: password ? 'presente' : 'não presente'  // Changed from user_password to password
     });
 
-    // Validate required fields with specific messages
     if (!user_name) return res.status(400).json({ error: "Nome é obrigatório" });
     if (!user_age) return res.status(400).json({ error: "Idade é obrigatória" });
     if (!user_cpf) return res.status(400).json({ error: "CPF é obrigatório" });
